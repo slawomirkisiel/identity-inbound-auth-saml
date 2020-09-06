@@ -51,6 +51,7 @@ public class SAMLSSOParticipantCache extends BaseCache<SAMLSSOParticipantCacheKe
         if (cacheEntry == null) {
             cacheEntry = (SAMLSSOParticipantCacheEntry) SessionDataStore.getInstance().
                     getSessionData(key.getSessionIndex(), CACHE_NAME);
+            super.addToCache(key, cacheEntry);
         }
         return cacheEntry;
     }

@@ -504,6 +504,7 @@ public class SAMLSSOProviderServlet extends HttpServlet {
             if (cacheEntry.getSessionInfoData() != null &&
                     cacheEntry.getSessionInfoData().getServiceProviderList() != null) {
                 cacheEntry.getSessionInfoData().removeServiceProvider(serviceProvider);
+                SAMLSSOParticipantCache.getInstance().addToCache(cacheKey, cacheEntry);
             }
         }
     }

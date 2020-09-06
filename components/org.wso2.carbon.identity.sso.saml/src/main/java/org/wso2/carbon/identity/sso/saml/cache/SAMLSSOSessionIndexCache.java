@@ -51,6 +51,7 @@ public class SAMLSSOSessionIndexCache extends BaseCache<SAMLSSOSessionIndexCache
         if (cacheEntry == null) {
             cacheEntry = (SAMLSSOSessionIndexCacheEntry) SessionDataStore.getInstance().getSessionData(key.getTokenId(),
                     CACHE_NAME);
+            super.addToCache(key, cacheEntry);
         }
         return cacheEntry;
     }

@@ -63,6 +63,7 @@ public class SessionDataCache extends BaseCache<SessionDataCacheKey, SessionData
         if (cacheEntry == null && isTemporarySessionDataPersistEnabled) {
             cacheEntry = (SessionDataCacheEntry) SessionDataStore.getInstance().getSessionData(key.getSessionDataKey(),
                     SESSION_DATA_CACHE_NAME);
+            super.addToCache(key, cacheEntry);
         }
         return cacheEntry;
     }
